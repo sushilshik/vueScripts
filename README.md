@@ -2,7 +2,7 @@
 
 ## Description 
 
-JRuby scripts for VUE (https://en.wikipedia.org/wiki/Visual_Understanding_Environment).
+JRuby scripts for VUE (https://en.wikipedia.org/wiki/Visual_Understanding_Environment). An first you need to patch VUE to integrate JRuby support. Then you can write and execute JRuby code in nodes on VUE canvas to control any VUE objects.
 
 Visual dynamic tests prototype is main project implemented with this JRuby scripts for VUE.
 
@@ -29,7 +29,7 @@ Read patch code - it is really small.
 
 Example and visual explanation of work with JRuby code in VUE - http://nkbtr.org/down/vue_scripting.vpk
 
-## Tests screenshots
+## Tests project screenshots
 
 Tests and tests data
 
