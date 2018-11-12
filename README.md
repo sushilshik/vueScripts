@@ -1,2 +1,48 @@
 # vueScripts
-JRuby scripts for VUE (https://en.wikipedia.org/wiki/Visual_Understanding_Environment)
+
+## Description 
+
+JRuby scripts for VUE (https://en.wikipedia.org/wiki/Visual_Understanding_Environment).
+
+Visual dynamic tests prototype is main project implemented with this JRuby scripts for VUE.
+
+File with tests example - http://www.nkbtr.org/down/tests-example.vpk
+
+## VUE Patch
+
+Patch VUE to integrate JRuby. You need it to use tests examples.
+
+1. git clone https://github.com/VUE/VUE.git
+2. cd VUE/
+3. git checkout tags/3.2.2
+4. git checkout -b 3.2.2-work
+5. wget http://nkbtr.org/down/jruby.patch
+
+Read patch code - it is really small.
+
+6. git apply jruby.patch
+7. wget http://central.maven.org/maven2/org/jruby/jruby-complete/1.7.16/jruby-complete-1.7.16.jar
+8. mv jruby-complete-1.7.16.jar VUE2/lib/
+9. ant compile
+10. ant jar
+11. java -jar VUE2/src/build/VUE.jar
+
+Example and visual explanation of work with JRuby code in VUE - http://nkbtr.org/down/vue_scripting.vpk
+
+## Tests screenshots
+
+Tests and tests data
+
+![Tests and tests data](http://www.nkbtr.org/down/tests_examples_screens/tests_simple.png)
+
+Tests
+
+![Tests](http://www.nkbtr.org/down/tests_examples_screens/tests_simple_test_screen.png)
+
+Tests data
+
+![Tests data](http://www.nkbtr.org/down/tests_examples_screens/tests_simple_test_data_rows.png)
+
+## Contacts
+
+https://www.facebook.com/mike.ahundov - any questions on setup, use, etc.
