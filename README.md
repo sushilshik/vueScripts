@@ -29,17 +29,29 @@ Read patch code - it is really small.
 
 Example and visual explanation of work with JRuby code in VUE - http://nkbtr.org/down/vue_scripting.vpk
 
-## Tests project screenshots
+## Screenshots
 
-Tests and tests data
+### JRuby code in VUE
+
+Jruby code in VUE node.
+
+![Jruby code in VUE node](http://www.nkbtr.org/down/jruby_vue_node.png)
+
+vue_scripting.vpk canvas screenshot with example code and how to use explanation.
+
+![vue_scripting.vpk](http://www.nkbtr.org/down/jruby_vue_example.png)
+
+### Tests project
+
+Tests and tests data.
 
 ![Tests and tests data](http://www.nkbtr.org/down/tests_examples_screens/tests_simple.png)
 
-Tests
+Tests.
 
 ![Tests](http://www.nkbtr.org/down/tests_examples_screens/tests_simple_test_screen.png)
 
-Tests data
+Tests data.
 
 ![Tests data](http://www.nkbtr.org/down/tests_examples_screens/tests_simple_test_data_rows.png)
 
