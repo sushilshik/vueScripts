@@ -6,7 +6,7 @@ JRuby scripts for VUE (https://en.wikipedia.org/wiki/Visual_Understanding_Enviro
 
 Visual dynamic tests prototype is main project implemented with this JRuby scripts.
 
-File with tests example - http://www.nkbtr.org/down/tests-example.vpk
+File with tests example - https://github.com/sushilshik/vueScripts/raw/master/vue_maps/tests-example.vpk 
 
 This is fast prototype code.
 
@@ -18,7 +18,7 @@ Patch VUE to integrate JRuby. You need it to use tests examples.
 2. cd VUE/
 3. git checkout tags/3.2.2
 4. git checkout -b 3.2.2-work
-5. wget http://nkbtr.org/down/jruby.patch
+5. wget https://raw.githubusercontent.com/sushilshik/vueScripts/master/jruby.patch
 
 Read patch code - it is really small.
 
@@ -29,7 +29,7 @@ Read patch code - it is really small.
 10. ant jar
 11. java -jar VUE2/src/build/VUE.jar
 
-Example and visual explanation of work with JRuby code in VUE - http://nkbtr.org/down/vue_scripting.vpk
+Example and visual explanation of work with JRuby code in VUE - https://github.com/sushilshik/vueScripts/raw/master/vue_maps/vue_scripting.vpk
 
 ## Screenshots
 
