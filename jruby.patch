@@ -1,0 +1,66 @@
+diff --git a/VUE2/src/build.xml b/VUE2/src/build.xml
+index 38ca034..bc7b48f 100755
+--- a/VUE2/src/build.xml
++++ b/VUE2/src/build.xml
+@@ -213,6 +213,7 @@
+ 		 		   twitter4j-core-2.1.0.jar
+ 		  	       miglayout-3.7.2-swing.jar
+   			       dom2.jar  			  	   
++                   jruby-complete-1.7.16.jar
+                    apache-commons.jar                   
+                    avalon-framework-cvs-20020806.jar                   
+                    commons-codec-1.3.jar
+@@ -299,6 +300,7 @@
+             value="
+                    okiOSID-2.0a.jar
+ 				   joscar-0.9.3-bin.jar
++                   jruby-complete-1.7.16.jar
+                    apache-commons.jar
+                    axis_1_5_3.jar
+                    commons-httpclient-3.1-beta1.jar      
+@@ -472,7 +474,8 @@
+     <pathelement path="${lib.home}/xercesImpl-2.7.1.jar" />
+     <pathelement path="${lib.home}/xerces-2.7.1-xml-apis.jar" />
+     <pathelement path="${lib.home}/apache-commons.jar"/>
+-    
++    <pathelement path="${lib.home}/jruby-complete-1.7.16.jar"/>
++
+   </path>
+ 
+   <path id="compile.classpath.oki2">
+diff --git a/VUE2/src/tufts/vue/LWIcon.java b/VUE2/src/tufts/vue/LWIcon.java
+index b3606ed..b3e407b 100755
+--- a/VUE2/src/tufts/vue/LWIcon.java
++++ b/VUE2/src/tufts/vue/LWIcon.java
+@@ -38,6 +38,8 @@ import edu.tufts.vue.preferences.implementations.BooleanPreference;
+ import edu.tufts.vue.preferences.implementations.ShowIconsPreference;
+ import edu.tufts.vue.preferences.interfaces.VuePreference;
+ 
++import org.jruby.embed.ScriptingContainer;
++
+ /**
+  * Icon's for displaying on LWComponents.
+  *
+@@ -1003,7 +1005,14 @@ public abstract class LWIcon extends Rectangle2D.Float
+             return IconPref.getNotesIconValue() && mLWC.hasNotes();
+         }
+         
+-        void doSingleClickAction() {}
++        void doSingleClickAction() {
++		if (mLWC.getNotes().startsWith("jruby")) {
++			String command = mLWC.getChildren().get(0).getLabel();
++			ScriptingContainer container = new ScriptingContainer();
++			container.put("$mLWC", mLWC);
++			container.runScriptlet(command);
++		}
++	}
+         void doDoubleClickAction() {
+ 
+             // is it faster to use Method.invoke, or to
+@@ -1694,4 +1703,4 @@ public abstract class LWIcon extends Rectangle2D.Float
+     //private static Font MinisculeFont = new Font("Arial Narrow", Font.PLAIN, 1);
+ 
+     
+-}
+\ No newline at end of file
++}
